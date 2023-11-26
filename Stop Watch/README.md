@@ -26,8 +26,11 @@ Two elements are passed on further - Time & Buttons. Time holds the calculated v
 Time.jsx : The components passed here are time={time}. A div is created which holds three paragraph tags that signify minutes, seconds and miliseconds. Then formulaes are used to calculate minutes, seconds and miliseconds.
 
 For minutes : Math.floor((time/60000)%60).slice(-2)
+
 For seconds : Math.floor((time/1000)%60).slice(-2)
+
 For miliseconds : ((time/10)%100).slice(-2)
+
 
 1. time/60000 : Calculates the total time in miliseconds 
 2. (time/60000)%60 : Returns the remainder giving us the total remaining time. (This is how the stop watch functions giving us the remaining time from the time when it started)
