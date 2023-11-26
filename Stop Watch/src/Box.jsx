@@ -18,7 +18,6 @@ const Box = () => {
     };
 
     const handleReset = () => {
-        setIsActive(false);
         setTime(0);
     };
 
