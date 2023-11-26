@@ -1,38 +1,41 @@
 import React from 'react'
-import { useState } from 'react'
 
-const Time = () => {
-    const [time, setTime] = useState([0, 0, ":", 0, 0, ":", 0, 0]);
-    const changeTime = () => {
-        let hrs = 0;
-        let mins = 0;
-        let secs = 0;
-        secs++;
-        if (secs > 59) {
-            secs = 0;
-            mins++;
-        }
-        if (mins > 59) {
-            mins = 0;
-            hrs++;
-        }
-        setInterval(() => {
-            changeTime();
-            setTime(time);
-        }, 1000);
-    }
+const Time = ({ time }) => {
+
 
     return (
-        <p
-            style={{
-                paddingTop: "55px",
-                fontSize: "45px",
-                color: "black",
-                fontFamily: "cursive",
-                letterSpacing: "1.8px"
-            }}
-        >{time}
-        </p >
+        <div className='timing'>
+            <p
+                style={{
+                    paddingTop: "55px",
+                    fontSize: "45px",
+                    color: "black",
+                    fontFamily: "cursive",
+                    letterSpacing: "1.8px"
+                }}
+            >{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+            </p >
+            <p
+                style={{
+                    paddingTop: "55px",
+                    fontSize: "45px",
+                    color: "black",
+                    fontFamily: "cursive",
+                    letterSpacing: "1.8px"
+                }}
+            >{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
+            </p >
+            <p
+                style={{
+                    paddingTop: "55px",
+                    fontSize: "45px",
+                    color: "black",
+                    fontFamily: "cursive",
+                    letterSpacing: "1.8px"
+                }}
+            >{("0" + ((time / 10) % 100)).slice(-2)}
+            </p >
+        </div>
     )
 }
 

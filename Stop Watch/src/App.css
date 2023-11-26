@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap');
-body{
+
+body {
   background: linear-gradient(rgb(27, 32, 107), white);
   font-family: 'Playpen Sans', cursive;
 }
@@ -40,4 +41,10 @@ body{
 #signs img:hover {
   border: 3px solid black;
   border-radius: 50%;
+}
+
+.timing {
+  display: flex;
+  margin-left: 80px;
+  margin-bottom: -37px;
 }
