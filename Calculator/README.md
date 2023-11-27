@@ -1,8 +1,6 @@
-# React + Vite
+## Calculator Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Intuition 
 
-Currently, two official plugins are available:
+Starting to develop a calculator, the first thought that came to my mind was creating this using use State. So first I would have to import use state from react.Next step is to create components. First I created a Calculator file that holds the complete set of states as well as their function as to what happens when I click a button, where will the number or symbol be stored in the input file. It consists of a Button component where in the function handleClick will be passed. In the Buttons file, all buttons in the containers will be specified and in particular onClick functions will be passed for every button. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
