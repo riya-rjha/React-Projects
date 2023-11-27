@@ -1,11 +1,7 @@
 import React from 'react'
 import './index.css'
 
-const Button = ({ handleInput, handleDelete, input, setInput }) => {
-
-    const handleInput = (e) => {
-        setInput(e.target.value);
-    }
+const Button = ({ handleInput, input, setInput, calculate }) => {
 
     const handleDelete = () => {
         let newInput = input.slice(0, -1); //deleting last element

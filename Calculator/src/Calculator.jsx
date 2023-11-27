@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Button from './Button'
 
 const Calculator = () => {
-    const [input, setInput] = useState('');
-
+    const [input, setInput] = useState(''); 
+    
     const handleInput = (value) => {
         //current value is appended to the previous value stored in the input field
         setInput((prevInput) => prevInput + value);
+        let effect = new Audio("Audio/Pop.mp3");
+        effect.play();
     }
 
     const calculate = () => {
@@ -59,9 +61,9 @@ const Calculator = () => {
                 </div>
                 <Button
                     handleInput={handleInput}
-                    handleDelete={handleDelete}
                     input={input}
                     setInput={setInput}
+                    calculate={calculate}
                 />
             </form>
         </div>
