@@ -1,8 +1,18 @@
 import React from 'react'
+import { useEffect } from 'react';
 
-const Notes = ({ notes, note, isActive, setIsActive }) => {
+const Notes = ({ notes, setNotes, isActive }) => {
 
-    // const notes = document.getElementById('notes');
+    //save notes
+    useEffect(() => {
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }, [notes]);
+
+    //get notes
+    useEffect(() => {
+        const items = JSON.parse(localStorage.getItem('notes')) || [];
+        setNotes(items);
+    }, []);
 
     const handleDelete = (e) => {
         e.target.parentElement.remove();

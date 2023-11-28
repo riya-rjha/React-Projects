@@ -9,9 +9,10 @@ const App = () => {
     const [notes, setNotes] = useState([]);
     const [isActive, setIsActive] = useState(false);
 
+
     return (
         <div className='container'>
-            <Header title="Notes"/>
+            <Header title="Notes" />
             <Button
                 notes={notes}
                 setNotes={setNotes}

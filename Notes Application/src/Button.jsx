@@ -14,14 +14,13 @@ const Button = ({ notes, setNotes, isActive, setIsActive }) => {
                 <p>Create Notes</p>
             </button>
             {notes.map((note, index) => (
-            <Notes
-                key={index}
-                note={note}
-                notes={notes}
-                isActive={isActive}
-                setIsActive={setIsActive}
-            />
-        ))}
+                <Notes
+                    key={index}
+                    notes={notes}
+                    setNotes={setNotes}
+                    isActive={isActive}
+                />
+            ))}
 
         </div>
     )
