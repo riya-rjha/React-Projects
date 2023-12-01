@@ -12,11 +12,11 @@ const Notes = ({ notes, setNotes, isActive }) => {
         }
     }, [notes]);
 
-    useEffect(() => {
-        const items = JSON.parse(localStorage.getItem('notes')) || [];
-        console.log('Retrieved notes from localStorage:', items);
-        setNotes(items);
-    }, []);
+    // useEffect(() => {
+    //     const items = JSON.parse(localStorage.getItem('notes')) || [];
+    //     console.log('Retrieved notes from localStorage:', items);
+    //     setNotes(items);
+    // }, []);
 
 
     const handleDelete = (e) => {
@@ -31,6 +31,7 @@ const Notes = ({ notes, setNotes, isActive }) => {
                         contentEditable='true'
                         id='notes'
                     >
+                        {notes.note}
                     </p>
                     <img src="Images/delete.png" id='deleteIcon' onClick={handleDelete} />
                 </div>

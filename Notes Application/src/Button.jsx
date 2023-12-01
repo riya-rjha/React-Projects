@@ -7,11 +7,17 @@ const Button = ({ notes, setNotes, isActive, setIsActive }) => {
         setNotes(prevNotes => [...prevNotes, ''])
         setIsActive(true);
     }
+    const fun = () => {
+        setNotes((id)=>id+1);
+        console.log(notes);
+    }
     return (
         <div>
             <button onClick={handleClick}>
                 <img src="Images/edit.png" id='editImg' />
-                <p>Create Notes</p>
+                <p
+                    onClick={fun}
+                >Create Notes</p>
             </button>
             {notes.map((note, index) => (
                 <Notes
