@@ -7,8 +7,8 @@ const Notes = ({ notes, setNotes, item}) => {
     const handleDelete = (id) => {
         const updatedItems = notes.filter(note => (
             note.id != id
-        ))
-        setNotes(updatedItems)
+        ));
+        setNotes(updatedItems);
     }
 
     useEffect(() => {
