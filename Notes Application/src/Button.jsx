@@ -1,15 +1,14 @@
 import React from 'react'
 import Notes from './Notes'
-
-const Button = ({ notes, setNotes, isActive, setIsActive }) => {
+import {nanoid} from 'nanoid'; //unique string id generator
+const Button = ({ notes, setNotes}) => {
 
     const handleClick = () => {
-        const id = notes.length + 1;
+        const id = nanoid();
         const note = "";
         const newItem = { id, note };
         const updatedNotes = [...notes, newItem];
         setNotes(updatedNotes);
-        setIsActive(true);
     }
 
     return (
