@@ -5,12 +5,10 @@ const addTask = ({ tasks, setTasks }) => {
 
     const addNewTask = () => {
         const id = nanoid();
-        const task = tasks;
-        const newTask = { id, task };
-        const updatedTask = { ...tasks, newTask };
+        const task = "";
+        const updatedTask = [...tasks];
         setTasks(updatedTask);
     }
-    
 
     return (
         <>
@@ -28,6 +26,11 @@ const addTask = ({ tasks, setTasks }) => {
                         placeholder="Add your task"
                         autoFocus
                         spellCheck='false'
+                        value={tasks}
+                        onChange={
+                            (e) => {
+                                setTasks(e.target.value)
+                            }}
                     />
                     <button
                         id="button-img"
@@ -35,26 +38,23 @@ const addTask = ({ tasks, setTasks }) => {
                     >Add</button>
                 </div>
                 <div>
-                    {tasks.length ?
+                    {tasks.length ? (
+                        tasks.map((item) => (
+                            <Tasks
+                                tasks={tasks}
+                                setTasks={setTasks}
+                                item={item}
+                                key={item.id}
+                            />
+                        ))
+                    ) : <p style={{
+                        color: "red",
+                        textAlign: "left",
+                        paddingLeft: "22px",
+                        paddingBottom: "5px"
+                    }}
+                    >Nothing to display!</p>}
 
-                        (
-                            tasks.map((item) => (
-                                <Tasks
-                                    tasks={tasks}
-                                    setTasks={setTasks}
-                                    item={item}
-                                    key={item.id}
-                                />
-                            ))
-                        ) :
-                        (<p style={{
-                            color: "red",
-                            textAlign: "left",
-                            paddingLeft: "22px",
-                            paddingBottom: "5px"
-                        }}
-                        >Nothing to display!</p>)
-                    }
                 </div>
             </div >
         </>
