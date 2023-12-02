@@ -31,8 +31,8 @@ body {
 }
 
 .container {
-  margin: 15px;
-  padding: 30px;
+  margin: 15px; 
+  /* padding: 30px; */
 }
 
 button {
@@ -65,7 +65,8 @@ button {
   max-height: fit-content;
   margin-top: 25px;
   margin-left: 26px;
-  width: 500px;
+  max-width: 600px;
+  min-width: 200px;
   border-radius: 5px;
   background-color: white;
   box-shadow: 2px 3px 9px #0000007d;
