@@ -31,8 +31,8 @@ body {
 }
 
 .container {
-  margin: 15px;
-  padding: 30px;
+  margin: 15px; 
+  /* padding: 30px; */
 }
 
 button {
@@ -58,33 +58,42 @@ button {
 }
 
 .notes-container {
+  padding: 15px;
+  padding-bottom: 40px;
   position: relative;
-  height: 150px;
+  min-height: 150px;
+  max-height: fit-content;
   margin-top: 25px;
   margin-left: 26px;
-  width: 500px;
+  max-width: 600px;
+  min-width: 200px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 3px 9px #0000007d;
 }
 
 .notes-content {
-  padding: 6px;
-  box-shadow: 2px 3px 9px #0000007d;
-  background-color: white;
-  height: 150px;
-  width: 500px;
-  color: rgb(28, 28, 28);
+  width: 100%;
+  min-height: 90px;
   outline: none;
   border: 0;
-  font-size: 15px;
-  margin: 5px;
-  margin-top: 25px;
-  position: relative;
+  font-size: 17px;
+  overflow: hidden;
+  resize: none;
 }
 
 #deleteIcon {
   position: absolute;
-  bottom: 8px;
-  right: 7px;
+  bottom: 10px;
+  right: 10px;
   width: 33px;
   height: 26px;
   cursor: pointer;
+}
+
+.no-notes{
+  margin-left: 26px;
+  font-size: 20px;
+  margin-top: 20px;
+  color: black;
 }
