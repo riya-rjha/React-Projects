@@ -72,7 +72,7 @@ body {
     font-weight: 900;
     position: absolute;
     cursor: pointer;
-    right: 450px;
+    right: 495px;
 
 }
 
@@ -91,15 +91,18 @@ body {
 
 #tasks-checklist li {
     list-style: none;
-    font-size: 17px;
+    font-size: 20px;
     cursor: pointer;
     padding: 5px;
     user-select: none;
     position: relative;
     padding-bottom: 15px;
+    color: rebeccapurple;
+    position: absolute;
+    top: -6px;
 }
 
-.checkIcon{
+.checkIcon {
     content: '';
     position: absolute;
     height: 20px;
@@ -109,7 +112,7 @@ body {
     background-position: center;
     border-radius: 50%;
     right: 467px;
-    top: 25px;
+    top: 5px;
     cursor: pointer;
     color: black;
     background: greenyellow;
