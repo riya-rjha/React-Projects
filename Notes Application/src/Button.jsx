@@ -1,7 +1,7 @@
 import React from 'react'
 import Notes from './Notes'
-import {nanoid} from 'nanoid'; //unique string id generator
-const Button = ({ notes, setNotes}) => {
+
+const Button = ({ notes, setNotes, isActive, setIsActive }) => {
 
     const handleClick = () => {
         const id = nanoid();
@@ -17,17 +17,6 @@ const Button = ({ notes, setNotes}) => {
                 <img src="Images/edit.png" id='editImg' />
                 <p>Create Notes</p>
             </button>
-
-            {notes.length ? (
-                notes.map((item) => (
-                    <Notes item={item} key={item.id} notes={notes} setNotes={setNotes} />
-                ))
-            ) : (
-                <p>
-                    No notes to display!
-                </p>
-            )}
-
         </div>
     )
 }
