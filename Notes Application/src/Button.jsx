@@ -4,29 +4,30 @@ import Notes from './Notes'
 const Button = ({ notes, setNotes, isActive, setIsActive }) => {
 
     const handleClick = () => {
-        setNotes(prevNotes => [...prevNotes, ''])
+        const id = notes.length + 1;
+        const note = "";
+        const newItem = { id, note };
+        const updatedNotes = [...notes, newItem];
+        setNotes(updatedNotes);
         setIsActive(true);
     }
-    const fun = () => {
-        setNotes((id)=>id+1);
-        console.log(notes);
-    }
+
     return (
         <div>
             <button onClick={handleClick}>
                 <img src="Images/edit.png" id='editImg' />
-                <p
-                    onClick={fun}
-                >Create Notes</p>
+                <p>Create Notes</p>
             </button>
-            {notes.map((note, index) => (
-                <Notes
-                    key={index}
-                    notes={notes}
-                    setNotes={setNotes}
-                    isActive={isActive}
-                />
-            ))}
+
+            {notes.length ? (
+                notes.map((item) => (
+                    <Notes item={item} key={item.id} notes={notes} setNotes={setNotes} />
+                ))
+            ) : (
+                <p>
+                    No notes to display!
+                </p>
+            )}
 
         </div>
     )
