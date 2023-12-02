@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import Tasks from './Tasks';
 const addTask = ({ tasks, setTasks }) => {
 
+    const [search, setSearch] = useState('');
+
     const addNewTask = () => {
         const id = nanoid();
-        const task = "";
-        const updatedTask = [...tasks];
+        const task = search;
+        const newTask = {id, task};
+        const updatedTask = [...tasks, newTask];
         setTasks(updatedTask);
+        console.log(updatedTask);
     }
 
     return (
@@ -26,11 +30,8 @@ const addTask = ({ tasks, setTasks }) => {
                         placeholder="Add your task"
                         autoFocus
                         spellCheck='false'
-                        value={tasks}
-                        onChange={
-                            (e) => {
-                                setTasks(e.target.value)
-                            }}
+                        value={search}
+                        onChange={(e)=>setSearch(e.target.value)}
                     />
                     <button
                         id="button-img"

@@ -16,7 +16,7 @@ const Tasks = ({tasks, setTasks, item}) => {
     <div>
         <ul id="tasks-checklist">
             <li>
-                {tasks}
+                {tasks.task}
             </li>
         <MdDelete onClick={handleDelete(item.id)}/>
         </ul>
