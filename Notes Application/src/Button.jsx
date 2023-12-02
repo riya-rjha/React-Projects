@@ -1,9 +1,10 @@
 import React from 'react'
+import { nanoid } from "nanoid";
 
 const Button = ({ notes, setNotes}) => {
 
     const handleClick = () => {
-        const id = notes.length + 1;
+        const id = nanoid();
         const note = "";
         const newItem = { id, note };
         const updatedNotes = [...notes, newItem];

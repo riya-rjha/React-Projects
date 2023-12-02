@@ -12,8 +12,9 @@ const Notes = ({ notes, setNotes, item}) => {
     }
 
     useEffect(() => {
-			const notess = [...notes];
-			notess[item.id-1].note = edit;
+            const notess = [...notes]
+            const index = notess.findIndex(note => note.id == item.id)
+			notess[index].note = edit;
 			setNotes(notess);
 		}, [edit]);
 
