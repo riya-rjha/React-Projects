@@ -1,28 +1,35 @@
 import React from 'react'
-// import { useEffect } from 'react';
+import TextareaAutosize from "react-textarea-autosize";
+import { useState, useEffect } from 'react';
 
-const Notes = ({ notes, setNotes, isActive }) => {
-
-    const handleDelete = () => {
+const Notes = ({ notes, setNotes, item}) => {
+    const [edit, setEdit] = useState(item.note)
+    const handleDelete = (id) => {
         const updatedItems = notes.filter((note) => (
             note.id != id
         ))
         setNotes(updatedItems)
     }
 
+    useEffect(() => {
+			const notess = [...notes];
+			notess[item.id-1].note = edit;
+			setNotes(notess);
+		}, [edit]);
+
     return (
         <div>
-            {isActive ? (
                 <div className='notes-container'>
-                    <p className="notes-content"
-                        contentEditable='true'
+                    <TextareaAutosize 
+                      className="notes-content"
                         id='notes'
-                    >
-                        {item.note}
-                    </p>
-                    <img src="Images/delete.png" id='deleteIcon' onClick={handleDelete} />
+                        value={edit}
+                        onChange={(e) => {
+                            setEdit(e.target.value);
+                        }}
+                     />
+                    <img src="Images/delete.png" id='deleteIcon' onClick={() => handleDelete(item.id)} />
                 </div>
-            ) : <p></p>}
         </div>
     )
 }
