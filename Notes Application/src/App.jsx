@@ -4,7 +4,6 @@ import Header from './Header'
 import Button from './Button'
 import Notes from './Notes'
 import { useState, useEffect } from 'react'
-import Notes from './Notes'
 
 const App = () => {
 

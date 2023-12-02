@@ -1,41 +1,36 @@
 import React from 'react'
-import { useEffect } from 'react';
+import TextareaAutosize from "react-textarea-autosize";
+import { useState, useEffect } from 'react';
 
-const Notes = ({ notes, setNotes, isActive }) => {
-
-    //save notes
-    useEffect(() => {
-        const storedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-        // Only update if there are changes
-        if (JSON.stringify(storedNotes) !== JSON.stringify(notes)) {
-            localStorage.setItem('notes', JSON.stringify(notes));
-        }
-    }, [notes]);
-
-    useEffect(() => {
-        const items = JSON.parse(localStorage.getItem('notes')) || [];
-        console.log('Retrieved notes from localStorage:', items);
-        setNotes(items);
-    }, []);
-
-
-    const handleDelete = (e) => {
-        e.target.parentElement.remove();
+const Notes = ({ notes, setNotes, item}) => {
+    const [edit, setEdit] = useState(item.note)
+    const handleDelete = (id) => {
+        const updatedItems = notes.filter(note => (
+            note.id != id
+        ))
+        setNotes(updatedItems)
     }
 
+    useEffect(() => {
+            const notess = [...notes]
+            const index = notess.findIndex(note => note.id == item.id)
+			notess[index].note = edit;
+			setNotes(notess);
+		}, [edit]);
+
     return (
-        <div>
-            {isActive ? (
-                <div className='notes-container'>
-                    <p className="notes-content"
-                        contentEditable='true'
-                        id='notes'
-                    >
-                    </p>
-                    <img src="Images/delete.png" id='deleteIcon' onClick={handleDelete} />
-                </div>
-            ) : <p></p>}
-        </div>
+            <div className='notes-container'>
+                <TextareaAutosize 
+                    spellCheck="false"
+                    className="notes-content"
+                    id='notes'
+                    value={edit}
+                    onChange={(e) => {
+                        setEdit(e.target.value);
+                    }}
+                 />
+                <img src="Images/delete.png" id='deleteIcon' onClick={() => handleDelete(item.id)} />
+            </div>
     )
 }
 

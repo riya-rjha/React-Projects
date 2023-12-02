@@ -1,7 +1,7 @@
 import React from 'react'
-import Notes from './Notes'
+import { nanoid } from "nanoid";
 
-const Button = ({ notes, setNotes, isActive, setIsActive }) => {
+const Button = ({ notes, setNotes}) => {
 
     const handleClick = () => {
         const id = nanoid();
