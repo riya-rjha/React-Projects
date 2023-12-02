@@ -1,5 +1,5 @@
 import React from 'react'
-import { nanoid } from "nanoid";
+import { nanoid } from "nanoid"; //generates unique 23 characters string for id
 
 const Button = ({ notes, setNotes}) => {
 

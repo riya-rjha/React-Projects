@@ -29,7 +29,9 @@ const App = () => {
 						/>
 					))
 				) : (
-					<p className='no-notes'>No notes to display!</p>
+					<p 
+						style={{color: "red"}}
+					>No notes to display!</p>
 				)}
 			</div>
 		);
