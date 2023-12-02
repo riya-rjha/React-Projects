@@ -10,6 +10,7 @@ const addTask = ({ tasks, setTasks }) => {
         const task = search;
         const newTask = {id, task};
         const updatedTask = [...tasks, newTask];
+        setSearch('');
         setTasks(updatedTask);
         console.log(updatedTask);
     }
