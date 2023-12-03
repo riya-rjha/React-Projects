@@ -12,7 +12,6 @@ const addTask = ({ tasks, setTasks }) => {
         const updatedTask = [...tasks, newTask];
         setSearch('');
         setTasks(updatedTask);
-        console.log(updatedTask);
     }
 
     return (
