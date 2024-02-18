@@ -1,13 +1,8 @@
 import React from 'react';
-import Footer from '../Components/Footer.jsx';
-import Contact from '../Components/Contact.jsx';
-import Main from '../Components/Main.jsx';
-import Services from '../Components/Services.jsx';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className='flex items-center justify-between'>
+    <div id='header' className='flex items-center justify-between'>
       <div className='text-[24px] ml-[80px] font-bold underline'>
         Let's Create
       </div>
@@ -18,26 +13,26 @@ const Header = () => {
               className='p-6 text-[20px] hover:text-blue-950 text-orange-800 transition-all delay-75
                 hover:underline hover:delay-75
               '>
-              About Us
+              <a href="#header">About Us</a>
             </li>
           </a>
           <li
             className='p-6 text-[20px] hover:text-blue-950 text-orange-800 transition-all delay-75
             hover:underline hover:delay-75
             '>
-            Services
+            <a href="#services">Services</a>
+          </li>
+          <li
+            className='p-6 text-[20px] hover:text-blue-950 text-orange-800 transition-all delay-75
+            hover:underline hover:delay-75 
+            '>
+            <a href="#contact">Contact Us</a>
           </li>
           <li
             className='p-6 text-[20px] hover:text-blue-950 text-orange-800 transition-all delay-75
             hover:underline hover:delay-75
             '>
-            Contact Us
-          </li>
-          <li
-            className='p-6 text-[20px] hover:text-blue-950 text-orange-800 transition-all delay-75
-            hover:underline hover:delay-75
-            '>
-            Footer
+            <a href="#footer">Footer</a>
           </li>
         </ul>
       </div>

@@ -7,7 +7,7 @@ import Services from './Components/Services.jsx';
 
 const App = () => {
   return (
-    <div className='bg-green-50 min-h-[100vh] min-w-[100vw]'>
+    <div className='bg-green-50 min-h-[100vh] min-w-fit'>
       <Header />
       <Main />
       <Services />

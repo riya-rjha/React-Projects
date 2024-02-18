@@ -2,7 +2,7 @@ import React from 'react'
 
 const Services = () => {
   return (
-    <div className='bg-white ml-[55px] mr-[55px] rounded-lg '>
+    <div id='services' className='bg-white ml-[55px] mr-[55px] rounded-lg '>
       <div className="flex  mt-[80px] items-center gap-20">
         <img src="../Images/work2.avif" className='rounded-full w-[380px] h-[252px] ml-[80px]' />
         <div className='ml-[-55px]'>

@@ -1,16 +1,19 @@
 import React from 'react';
+import { FaTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4 mt-20">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+    <footer id='footer' className="bg-gray-800 text-white py-4 mt-20">
+      <div className="container mx-auto grid grid-cols-4 gap-4 text-center">
         <div className="flex flex-col justify-center">
           <h2 className="text-lg font-bold">Let's Create</h2>
-          <input type="email" placeholder="Enter your email" className="mt-2 px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:border-gray-400" />
+          <input type="email" placeholder="Enter your email" className="mt-2 px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded-md focus:ring focus:border-green-400" />
         </div>
 
         <div className="flex flex-col justify-center">
-          <h2 className="text-lg font-bold">Our Services</h2>
+          <h2 className="text-lg font-semibold">Our Services</h2>
           <ul className="mt-2">
             <li className="hover:text-gray-300">Inspiration Gallery</li>
             <li className="hover:text-gray-300">Case Studies</li>
@@ -30,18 +33,18 @@ const Footer = () => {
 
         <div className="flex flex-col justify-center">
           <h2 className="text-lg font-bold">Contact Us</h2>
-          <address className="mt-2">1234 Street Name, City, Country</address>
+          <address className="mt-2">Don Bosco Street, Ottawa, Canada</address>
           <p className="mt-1">Phone: +1234567890</p>
-          <p>Email: contact@example.com</p>
+          <p>Email: letscreate153@gmail.com</p>
           <div className="mt-2 flex justify-center">
-            <a href="#" className="mr-2 hover:text-gray-300">
-              <i className="fab fa-twitter"></i>
+            <a href="#" className="mr-2  text-4xl hover:text-green-300 cursor-default">
+              <FaTwitter />
             </a>
-            <a href="#" className="mr-2 hover:text-gray-300">
-              <i className="fab fa-instagram"></i>
+            <a href="#" className="mr-2 text-4xl hover:text-green-300 cursor-default">
+              <FaInstagramSquare />
             </a>
-            <a href="#" className="hover:text-gray-300">
-              <i className="fab fa-facebook"></i>
+            <a href="#" className="hover:text-green-300 text-4xl cursor-default">
+              <FaFacebook />
             </a>
           </div>
         </div>
