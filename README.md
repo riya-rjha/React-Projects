@@ -8,3 +8,12 @@ Developers can improve their knowledge of ReactJS and hone their front-end devel
 
 This repository is a work in progress, with plans to add more projects in the future. The idea is to encourage developers to explore, create, and hone their art in order to inspire a never-ending journey of development and coding. These ReactJS projects are a great starting point for anyone trying to learn the basics or upgrade their skills. They are a great resource for developers of all skill levels. So let's get started on this path of coding, and may creativity flourish in each and every line of code!
 
+This GitHub Repository consists of the following basic reactjs applications :
+
+1. Agency Website using Tailwind CSS
+2. Calculator
+3. Drag & Drop functionality
+4. Notes Application
+5. Stopwatch
+6. To Do List
+7. Weather Application
