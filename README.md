@@ -17,3 +17,4 @@ This GitHub Repository consists of the following basic reactjs applications :
 5. Stopwatch
 6. To Do List
 7. Weather Application
+8. Progress Bar
