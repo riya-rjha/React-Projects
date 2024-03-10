@@ -5,6 +5,44 @@
   box-sizing: border-box;
 }
 
+.animate-toast {
+  animation: slideIn 1.5s forwards;
+}
+
+.toast:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.toast.animation {
+  animation: slideOut 8.5s forwards;
+  position: relative;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0%);
+  }
+
+  90% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
